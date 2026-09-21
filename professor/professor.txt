@@ -1,0 +1,12 @@
+16:36 21/09/202616:36 21/09/2026nome;cpf;matricula;end
+Pedro da Silva;sla@gmail.com;12345;31;
+Pedro da Silva;sla@gmail.com;12345;31;
+Pedro da Silva;sla@gmail.com;12345;31;
+Pedro da Silva;sla@gmail.com;123;31;
+Pedro da Silva;sla@gmail.com;123;31;
+manuel gomes;12345;789;31
+manuel gomes;12345;789;31
+manuel gomes;12345;789;31
+manuel gomes;12345;789;31
+so porradao;12345678;321;21
+Joao;99999999;456;42
