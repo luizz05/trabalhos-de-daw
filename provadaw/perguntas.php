@@ -26,52 +26,6 @@ $linha = "id;idPergunta;resposta;certa";
 fwrite($arqResposta,$linha);
 fclose($arqResposta);
 }
-$arqResposta = fopen("respostas.txt","a") or die("erro ao criar arquivo");
-if ($certa == 1)
-{
-$linha = "1;" . $id . ";" . $resp1 . ";1";
-fwrite($arqResposta,$linha);
-$linha = "2;" . $id . ";" . $resp2 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "3;" . $id . ";" . $resp3 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "4;" . $id . ";" . $resp4 . ";0";
-fwrite($arqResposta,$linha);
- }
-if ($certa == 2)
-{
-$linha = "1;" . $id . ";" . $resp1 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "2;" . $id . ";" . $resp2 . ";1";
-fwrite($arqResposta,$linha);
-$linha = "3;" . $id . ";" . $resp3 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "4;" . $id . ";" . $resp4 . ";0";
-fwrite($arqResposta,$linha);
-}
-if ($certa == 3)
-{
-$linha = "1;" . $id . ";" . $resp1 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "2;" . $id . ";" . $resp2 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "3;" . $id . ";" . $resp3 . ";1";
-fwrite($arqResposta,$linha);
-$linha = "4;" . $id . ";" . $resp4 . ";0";
-fwrite($arqResposta,$linha);
-}
-if ($certa == 4)
-{
-$linha = "1;" . $id . ";" . $resp1 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "2;" . $id . ";" . $resp2 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "3;" . $id . ";" . $resp3 . ";0";
-fwrite($arqResposta,$linha);
-$linha = "4;" . $id . ";" . $resp4 . ";1";
-fwrite($arqResposta,$linha);
-}
-fclose($arqResposta);
 }
 ?>
 <!DOCTYPE html>
