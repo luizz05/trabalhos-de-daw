@@ -15,7 +15,7 @@ fclose($arqUsuario);
 }
 $arqUsuario = fopen("usuarios.txt","a") or die("erro ao criar arquivo");
 
-$linha = $nome . ";" . $cpf . ";" . "\n";
+$linha = $nome . ";" . $cpf . "\n";
 fwrite($arqUsuario,$linha);
 fclose($arqUsuario);
 }
