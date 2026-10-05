@@ -30,7 +30,7 @@ fclose($arq_usuarios);
 Nome
 <input type="text" name="nome" value="<?php echo $nome ?>">
 <br><br>
-Email
+Cpf
 <input type="text" name="cpf" value="<?php echo $cpf ?>">
 <br><br>
 <input type="submit" value="Alteracao">
