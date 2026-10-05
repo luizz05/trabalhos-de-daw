@@ -27,7 +27,7 @@ while(($linha = fgets($arqRespostas)) !== false)
 {
 if(trim($linha) != "") {
 $excluirResposta = explode(";", trim($linha));
-if($excluirResposta[0] != $id) 
+if($excluirResposta[1] != $id)
 {
 $novaResposta .= $linha;
 }
