@@ -2,10 +2,10 @@
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
 $id = $_POST["id"];
 $pergunta = $_POST["pergunta"];
-$res1 = $_POST["resposta1"];
-$res2 = $_POST["resposta2"];
-$res3 = $_POST["resposta3"];
-$res4 = $_POST["resposta4"];
+$resposta1 = $_POST["resposta1"];
+$resposta2 = $_POST["resposta2"];
+$resposta3 = $_POST["resposta3"];
+$resposta4 = $_POST["resposta4"];
 $certa = $_POST["certa"];
 
 if(!file_exists("perguntas.txt")){
@@ -26,36 +26,37 @@ fclose($r);
 }
 $r = fopen("respostas.txt", "a") or die("Erro ao abrir arquivo de respostas. ");
 if($certa==1){
-$linha =  "1;" . $id . ";" . $res1 . ";1\n";
+$linha =  "1;" . $id . ";" . $resposta1 . ";1\n";
 }else{
-$linha = "1;" . $id . ";" . $res1 . ";0\n";
+$linha = "1;" . $id . ";" . $resposta1 . ";0\n";
 }
 fwrite($r, $linha);
 if($certa == 2){
-$linha = "2;" . $id . ";" . $res2 . ";1\n";
+$linha = "2;" . $id . ";" . $resposta2 . ";1\n";
 }
 else{
-$linha = "2;" . $id . ";" . $res2 . ";0\n";
+$linha = "2;" . $id . ";" . $resposta2 . ";0\n";
 }
 fwrite($r, $linha);
 if($certa == 3){
-$linha = "3;" . $id . ";" . $res3 . ";1\n";
+$linha = "3;" . $id . ";" . $resposta3 . ";1\n";
 }
 else{
-$linha = "3;" . $id . ";" . $res3 . ";0\n";
+$linha = "3;" . $id . ";" . $resposta3 . ";0\n";
 }
 fwrite($r, $linha);
-if($certa==4){
-$linha = "4;" . $id . ";" . $res4 . ";1\n";
+if($certa == 4){
+$linha = "4;" . $id . ";" . $resposta4 . ";1\n";
 }
 else{
-$linha = "4;" . $id . ";" . $res4 . ";0\n";
+$linha = "4;" . $id . ";" . $resposta4 . ";0\n";
 }
 fwrite($r, $linha);
        
 fclose($r);
 $msg = "Cadastro de pergunta deu certo";
     }
+?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -91,7 +92,7 @@ Qual esta certa:
 <option value="4">Resposta 4</option>
 </select>
 <br><br>
-<a href="index.php">Voltar</a>
+<input type="submit" value="Criar pergunta">
 </form>
 </body>
 </html>
