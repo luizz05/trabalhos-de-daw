@@ -45,7 +45,7 @@ else{
 $linha = "3;" . $id . ";" . $resposta3 . ";0\n";
 }
 fwrite($r, $linha);
-if($certa == 4){
+if($certa==4){
 $linha = "4;" . $id . ";" . $resposta4 . ";1\n";
 }
 else{
@@ -56,7 +56,6 @@ fwrite($r, $linha);
 fclose($r);
 $msg = "Cadastro de pergunta deu certo";
     }
-?>
 ?>
 <!DOCTYPE html>
 <html>
