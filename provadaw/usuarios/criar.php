@@ -35,9 +35,9 @@ cpf: <input type="text" name="cpf">
 <br><br>
 <input type="submit" value="Criar novo aluno">
 </form>
-<br><a href="listar_usuarios.php">Listar Usuarios</a>
-<br><a href="alterar_usuario.php">Alterar Usuarios</a>
-<br><a href="excluir_usuario.php">Excluir Usuarios</a>
+<br><a href="listar.php">Listar Usuarios</a>
+<br><a href="alterar.php">Alterar Usuarios</a>
+<br><a href="excluir.php">Excluir Usuarios</a>
 <br><a href="../criar_perguntas.php">Voltar</a>
 <br>
 </body>
