@@ -57,7 +57,6 @@ fclose($r);
 $msg = "Cadastro de pergunta deu certo";
     }
 ?>
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,5 +93,6 @@ Qual esta certa:
 <br><br>
 <input type="submit" value="Criar pergunta">
 </form>
+<br><a href="criar_resposta.php">Cadastre Resposta</a>
 </body>
 </html>
