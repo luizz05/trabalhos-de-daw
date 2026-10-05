@@ -1,6 +1,5 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') 
-{
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
 $id = $_POST["id"];
 $pergunta = $_POST["pergunta"];
 $res1 = $_POST["resposta1"];
@@ -8,26 +7,15 @@ $res2 = $_POST["resposta2"];
 $res3 = $_POST["resposta3"];
 $res4 = $_POST["resposta4"];
 $certa = $_POST["certa"];
-if(file_exists("perguntas.txt")) {
-$arqAlterar = fopen("perguntas.txt", "r");
-$novo = "";
-while(($linha = fgets($arqAlterar)) !== false) {
-if(trim($linha) != "") {
-$alterar = explode(";", trim($linha));             
-if($alterar[0] == $id) {
-$linha_nova = $id . ";" . $pergunta . ";" . $res1 . ";" . $res2 . ";" . $res3 . ";" . $res4 . ";" . $certa . "\n";
-$novo .= $linha_nova;
-} 
-else 
-{
-$novo .= $linha;
-}
-}
-}
-fclose($arqAlterar);
-
-$arqPerguntas = fopen("perguntas.txt", "w");
-fwrite($arqPerguntas, $novo);
+if(!file_exists("perguntas.txt")) {
+$arq_perguntas = fopen("perguntas.txt", "w")or die("ERROR! Erro ao abrir o arquivo.");
+$linha = $id . ";" . $pergunta . ";" . $res1 . ";" . $res2 . ";" . $res3 . ";" . $res4 . ";" . $certa . "\n";
+fwrite($arq_perguntas, $linha);
+fclose($arq_perguntas);
+} else {
+$arqPerguntas = fopen("perguntas.txt", "a")or die("Não foi possível abrir o arquivo.");
+$linha = $id . ";" . $pergunta . ";" . $res1 . ";" . $res2 . ";" . $res3 . ";" . $res4 . ";" . $certa . "\n";
+fwrite($arqPerguntas, $linha);
 fclose($arqPerguntas);
 }
 }
