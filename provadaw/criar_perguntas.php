@@ -91,8 +91,7 @@ Qual esta certa:
 <option value="4">Resposta 4</option>
 </select>
 <br><br>
-<input type="submit" value="Criar pergunta">
+<a href="index.php">Voltar</a>
 </form>
-<br><a href="criar_resposta.php">Cadastre Resposta</a>
 </body>
 </html>
