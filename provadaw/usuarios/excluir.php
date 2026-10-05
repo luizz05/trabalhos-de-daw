@@ -27,9 +27,9 @@ fclose($arqUsuarios);
 <title>Excluir Usuario</title>
 </head>
 <body>
-<h1><center>Excluir Usuario</center></h1>
+<h1>Excluir Usuario</h1>
 <form action="excluir_usuario.php" method="POST">
- CPF do usuario: <input type="text" name="cpf"><br>
+CPF do usuario: <input type="text" name="cpf"><br>
 <br><input type="submit" value="Excluir">
 </form>
 <br><a href="criar_usuario.php">Voltando</a>
