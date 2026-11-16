@@ -29,8 +29,8 @@ let operacao = document.getElementById("operacao").value;
 let requisicao = new XMLHttpRequest();
 requisicao.onreadystatechange = function() {
 if (requisicao.readyState == 4 && requisicao.status == 200) {
-document.getElementById("resposta").innerText =
-"O resultado é: " + requisicao.responseText;
+let resposta = JSON.parse(xhr.responseText);
+document.getElementById("resposta").innerText = "O resultado é: " + requisicao.responseText;
 }
 };
 let endereco = "calculo.php?num1=" + valor1 +
