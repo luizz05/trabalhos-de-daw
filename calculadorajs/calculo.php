@@ -23,5 +23,5 @@ case '/';
 $resultado = $n1 / $n2;
 break;
 }
-echo $resultado;
+echo json_encode(["resultado" => $resultado]);
 }
