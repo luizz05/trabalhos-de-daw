@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Resposta</title>
+</head>
+<body>
+<h1><center>Cadastrar Resposta</center></h1>
+<form id="formulario">
+ID da pergunta:
+<input type="text" id="IDperg">
+<br>
+ID da resposta:
+<input type="text" id="IDresp">
+<br><br>
+
+<button type="button" onclick="enviarResposta()">Registrar</button>
+</form>
+<h3 id="mensagem"></h3>
+<script>
+function enviarResposta()
+{
+let IDperg = document.getElementById("IDperg").value;
+let IDresp = document.getElementById("IDresp").value;
+let url = "php/criarresposta.php?IDperg=" + encodeURIComponent(IDperg) +
+"&IDresp=" + encodeURIComponent(IDresp);
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function()
+{
+if(xhr.readyState == 4 && xhr.status == 200)
+{
+document.getElementById("mensagem").innerText = xhr.responseText;
+document.getElementById("formulario").reset();
+}
+};
+xhr.open("GET", url, true);
+xhr.send();
+}
+</script>
+<br>
+<a href="criarperguntas.html">Voltar</a>
+</body>
+</html>
