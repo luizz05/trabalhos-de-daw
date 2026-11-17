@@ -26,7 +26,7 @@ function criarUsuario()
 let nome = document.getElementById("nome").value;
 let cpf = document.getElementById("cpf").value;
 
-let url = "../php/criar_usuario.php?nome=" + encodeURIComponent(nome) + "&cpf=" + encodeURIComponent(cpf);
+let url = "../php/criarusuario.php?nome=" + encodeURIComponent(nome) + "&cpf=" + encodeURIComponent(cpf);
 
 let xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function()
