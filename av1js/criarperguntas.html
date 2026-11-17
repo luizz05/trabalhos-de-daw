@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Perguntas</title>
+</head>
+<body>
+<h1><center>Criar Perguntas</center></h1>
+<form id="formulario">
+ID:
+<input type="number" id="id">
+<br><br>
+
+Pergunta:
+<input type="text" id="pergunta">
+<br><br>
+
+Resposta 1:
+<input type="text" id="resposta1">
+<br><br>
+
+Resposta 2:
+<input type="text" id="resposta2">
+<br><br>
+
+Resposta 3:
+<input type="text" id="resposta3">
+<br><br>
+
+Resposta 4:
+<input type="text" id="resposta4">
+<br><br>
+
+Qual está certa:
+<select id="certa">
+<option value="1">Resposta 1</option>
+<option value="2">Resposta 2</option>
+<option value="3">Resposta 3</option>
+<option value="4">Resposta 4</option>
+</select>
+
+<br><br>
+
+<button type="button" onclick="enviarPergunta()">Criar pergunta</button>
+
+</form>
+
+<h3 id="mensagem"></h3>
+
+<script>
+
+function enviarPergunta()
+{
+let id = document.getElementById("id").value;
+let pergunta = document.getElementById("pergunta").value;
+let resposta1 = document.getElementById("resposta1").value;
+let resposta2 = document.getElementById("resposta2").value;
+let resposta3 = document.getElementById("resposta3").value;
+let resposta4 = document.getElementById("resposta4").value;
+let certa = document.getElementById("certa").value;
+
+let url = "php/criarperguntas.php?id=" + encodeURIComponent(id) +
+"&pergunta=" + encodeURIComponent(pergunta) +
+"&resposta1=" + encodeURIComponent(resposta1) +
+"&resposta2=" + encodeURIComponent(resposta2) +
+"&resposta3=" + encodeURIComponent(resposta3) +
+"&resposta4=" + encodeURIComponent(resposta4) +
+"&certa=" + encodeURIComponent(certa);
+
+let xhr = new XMLHttpRequest();
+
+xhr.onreadystatechange = function()
+{
+if(xhr.readyState == 4 && xhr.status == 200)
+{
+document.getElementById("mensagem").innerText = xhr.responseText;
+document.getElementById("formulario").reset();
+}
+};
+
+xhr.open("GET", url, true);
+xhr.send();
+}
+</script>
+<br>
+<a href="alterarperguntas.html">Alterar Perguntas</a>
+<br>
+<a href="listarperguntas.html">Listar Perguntas</a>
+<br>
+<a href="excluirperguntas.html">Excluir Perguntas</a>
+<br>
+<a href="usuarios/criarusuario.html">Criar Usuários</a>
+</body>
+</html>

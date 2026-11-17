@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listar Perguntas</title>
+</head>
+<body>
+<h1><center>Lista de Perguntas</center></h1>
+
+<div id="resultado" style="margin-top: 15px;">Aguarde...</div>
+
+<script>
+
+window.onload = function()
+{
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function()
+{
+if(xhr.readyState == 4 && xhr.status == 200)
+{
+document.getElementById("resultado").innerHTML = xhr.responseText;
+}
+};
+xhr.open("GET", "php/listarperguntas.php", true);
+xhr.send();
+};
+</script>
+<br>
+<a href="criarperguntas.html">Voltar</a>
+</body>
+</html>
