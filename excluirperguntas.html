@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Excluir Pergunta</title>
+</head>
+<body>
+<h1><center>Excluir Pergunta</center></h1>
+<form id="formulario">
+
+ID da pergunta:
+<input type="text" id="id">
+<button type="button" onclick="excluirPergunta()">Excluir</button>
+</form>
+<h3 id="mensagem"></h3>
+<script>
+function excluirPergunta()
+{
+let id = document.getElementById("id").value;
+let url = "php/excluirperguntas.php?id=" + encodeURIComponent(id);
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function()
+{
+if(xhr.readyState == 4 && xhr.status == 200)
+{
+document.getElementById("mensagem").innerText = xhr.responseText;
+document.getElementById("formulario").reset();
+}
+};
+xhr.open("GET", url, true);
+xhr.send();
+}
+</script>
+<br>
+<a href="criarperguntas.html">Voltar</a>
+</body>
+</html>
